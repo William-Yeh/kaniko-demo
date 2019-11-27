@@ -1,4 +1,9 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:3.0 AS build
+
+# Get around dotnet/core/sdk + Kaniko bug.
+# @see https://github.com/GoogleContainerTools/kaniko/issues/391#issuecomment-477472649
+ENV COMPlus_EnableDiagnostics=0
+
 WORKDIR /app
 
 # Add *.csproj before rest of repo for caching
