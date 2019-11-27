@@ -1,3 +1,35 @@
+# Kaniko demo
+
+This repo is to demonstrate how Kaniko makes use of build cache.
+
+
+## Build images with Docker CLI
+
+1. Initial build:
+
+   ```
+   % docker build  -t todoapi:1  src 
+   ```
+
+2. Build again with cache:
+
+   ```
+   % docker build  -t todoapi:2  src 
+   ```
+
+3. Modify src and re-build with cache:
+
+   ```
+   % touch src/empty-3
+
+   % docker build  -t todoapi:3  src 
+   ```
+
+
+## Build images with Kaniko
+
+TODO
+
 
 ## About the source code
 
